@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuloFacturacion", "ModuloFacturacion.csproj", "{8202E09F-0307-482B-B059-E694272001A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "..\Domain\Domain.csproj", "{84EDFE9B-93FD-40C2-B961-A7B79F72A87D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework", "..\Framework\Framework.csproj", "{900572E9-582E-497F-95F3-C4C255219064}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8202E09F-0307-482B-B059-E694272001A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8202E09F-0307-482B-B059-E694272001A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8202E09F-0307-482B-B059-E694272001A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8202E09F-0307-482B-B059-E694272001A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84EDFE9B-93FD-40C2-B961-A7B79F72A87D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84EDFE9B-93FD-40C2-B961-A7B79F72A87D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84EDFE9B-93FD-40C2-B961-A7B79F72A87D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84EDFE9B-93FD-40C2-B961-A7B79F72A87D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{900572E9-582E-497F-95F3-C4C255219064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{900572E9-582E-497F-95F3-C4C255219064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{900572E9-582E-497F-95F3-C4C255219064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{900572E9-582E-497F-95F3-C4C255219064}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {84CF2121-50DF-4FAB-AA1B-E2341600F8D4}
+	EndGlobalSection
+EndGlobal
