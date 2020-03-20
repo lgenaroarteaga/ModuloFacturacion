@@ -14,11 +14,6 @@ namespace Domain.Events.Invoice
 
         public DateTimeType BookDate { get; set; }
 
-        public InvoicePosted(string bookEntry, DateTime bookDate)
-        {
-            BookEntry = bookEntry;
-            BookDate = bookDate;
-
-        }
+       
     }
 }

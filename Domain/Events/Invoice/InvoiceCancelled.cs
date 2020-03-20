@@ -9,10 +9,7 @@ namespace Domain.Events.Invoice
 {
     public class InvoiceCancelled
     {
-        DateTimeType CancellationDate { set; get; }
+       
 
-        public InvoiceCancelled(DateTime cancellationDate) {
-            CancellationDate = cancellationDate;
-        }
     }
 }

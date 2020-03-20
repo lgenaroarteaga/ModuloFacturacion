@@ -1,4 +1,5 @@
-﻿using Domain.ValueObject;
+﻿using Domain.Entities;
+using Domain.ValueObject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,15 @@ namespace Domain.Events.Invoice
 {
     class InvoiceCreated 
     {
-        public NumericString InvoiceNumber { get; set; }
-        public DateTimeType InvoiceDate { get; set; }
+        public InvoiceGuid InvoiceID { get; set; }
+        public NumericNonNegative InvoiceNumber { get; set; }
+        public StringNotNull ClientName { get; set; }
+        public StringNotNull TaxPayerIdentificationNumber { get; set; }
+        public List<InvoiceDetail> DetailList { set; get; }
+        public AuthorizationGuid AuthorizationId { get; set; }
 
-        public InvoiceCreated(string invoiceNumber, DateTime invoiceDate ) {
-            InvoiceNumber = invoiceNumber;
-            InvoiceDate = invoiceDate;
+        public InvoiceCreated(Guid authorizationId) {
+            this.InvoiceID = new Guid();
         }
-
     }
 }
