@@ -15,30 +15,25 @@ namespace Domain.Entities
         public StringNotNull ClientName { get; set; }
         public StringNotNull TaxPayerIdentificationNumber { get; set; }
         public DateTimeType EmisionDate { get; set; }
-        public List<InvoiceDetail> DetailList { set; get; }
+        
         public AuthorizationGuid AuthorizationId { get; set; }
         public StatusInvoice Status { get; set; }
         public NumericString BookEntry;
         public DateTimeType BookDate { get; set; }
 
-        public Invoice(int invoiceNumber, string clientName, string taxPayerIdentificationNumber, List<InvoiceDetail> detailList, Guid authorizationId)
+        public Invoice(int invoiceNumber, string clientName, string taxPayerIdentificationNumber, Guid authorizationId)
         {
             InvoiceId = new Guid();
             InvoiceNumber = InvoiceNumber;
             ClientName = clientName;
             TaxPayerIdentificationNumber = taxPayerIdentificationNumber;
-            DetailList = detailList;
             EmisionDate = DateTime.Now;
             AuthorizationId = authorizationId;
             Status = StatusInvoice.Declared;
             
         }
 
-        public void AddToDetailList(InvoiceDetail invoiceDetail) {
-            DetailList.Add(invoiceDetail);
-        }
-
-          protected override void ValidateStatus()
+        protected override void ValidateStatus()
         {
             throw new NotImplementedException();
         }
@@ -53,7 +48,6 @@ namespace Domain.Entities
                     InvoiceNumber = e.InvoiceNumber;
                     ClientName = e.ClientName;
                     TaxPayerIdentificationNumber = e.TaxPayerIdentificationNumber;
-                    DetailList = e.DetailList;
                     EmisionDate = DateTime.Now;
                     AuthorizationId = e.AuthorizationId;
                     Status = StatusInvoice.Declared;
@@ -66,8 +60,6 @@ namespace Domain.Entities
                     BookEntry = e.BookEntry;
                     BookDate = e.BookDate;
                     break;
-                    
-                
             }
         }
     }
