@@ -18,19 +18,18 @@ namespace Domain.Entities
         
         public AuthorizationGuid AuthorizationId { get; set; }
         public StatusInvoice Status { get; set; }
-        public NumericString BookEntry;
-        public DateTimeType BookDate { get; set; }
-
+        public List<InvoiceDetail> Detail;
+        
         public Invoice(int invoiceNumber, string clientName, string taxPayerIdentificationNumber, Guid authorizationId)
         {
             InvoiceId = new Guid();
-            InvoiceNumber = InvoiceNumber;
+            InvoiceNumber = invoiceNumber;
             ClientName = clientName;
             TaxPayerIdentificationNumber = taxPayerIdentificationNumber;
             EmisionDate = DateTime.Now;
             AuthorizationId = authorizationId;
             Status = StatusInvoice.Declared;
-            
+            Detail = new List<InvoiceDetail>();
         }
 
         protected override void ValidateStatus()
@@ -57,8 +56,6 @@ namespace Domain.Entities
                     break;
                 case Domain.Events.Invoice.InvoicePosted e:
                     Status = StatusInvoice.Issued;
-                    BookEntry = e.BookEntry;
-                    BookDate = e.BookDate;
                     break;
             }
         }
