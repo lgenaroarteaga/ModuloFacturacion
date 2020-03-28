@@ -18,6 +18,7 @@ namespace Infrastructure.Persistence
         }
 
         public DbSet<Invoice> Invoices { get; set; }
+        public DbSet<Authorization> Authorizations { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

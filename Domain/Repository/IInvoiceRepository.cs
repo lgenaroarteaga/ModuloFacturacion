@@ -11,7 +11,7 @@ namespace Domain.Repository
     public interface IInvoiceRepository
     {
         
-        Task<Invoice> Load(Invoice id);
+        Task<Invoice> Load(InvoiceGuid id);
         Task Add(Invoice entity);
         Task Delete(InvoiceGuid id);
         void Update(Invoice entity);

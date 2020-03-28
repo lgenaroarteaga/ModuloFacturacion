@@ -1,9 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Domain.Repository;
+using Framework;
+using Infrastructure.Persistence;
+using Infrastructure.Persistence.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -22,6 +23,17 @@ namespace ModuloFacturacion
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string connString = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<LibraryDbContext>(options =>
+                options.UseSqlServer(connString, b => b.MigrationsAssembly("webAPI")));
+
+            services.AddScoped<IUnitOfWork, EFCoreInvoiceUnitOfWork>();
+            services.AddScoped<IInvoiceRepository, InvoiceRepository>();
+            services.AddScoped<IAuthorizationRepository, AuthorizationRepository>();
+            services.AddScoped<IApplicationService, InvoiceApplicationService>();
+
+            //services.AddSingleton<IDateService, DateService>();
+
             services.AddControllersWithViews();
         }
 

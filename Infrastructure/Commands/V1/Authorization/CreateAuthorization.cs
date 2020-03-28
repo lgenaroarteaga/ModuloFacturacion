@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Infrastructure.Commands.V1.Authorization
 {
-    class CreateAuthorization
+    public class CreateAuthorization
     {
     }
 }

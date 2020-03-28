@@ -20,7 +20,7 @@ namespace Domain.Entities
         public StatusInvoice Status { get; set; }
         public List<InvoiceDetail> Detail;
         
-        public Invoice(int invoiceNumber, string clientName, string taxPayerIdentificationNumber, Guid authorizationId)
+        public Invoice(int invoiceNumber, string clientName, string taxPayerIdentificationNumber, string authorizationId)
         {
             InvoiceId = new Guid();
             InvoiceNumber = invoiceNumber;

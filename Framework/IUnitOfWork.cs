@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Framework
 {
-    interface IUnitOfWork
+    public interface IUnitOfWork
     {
         Task Commit();
     }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Framework
 {
-    interface IApplicationService
+    public interface IApplicationService
     {
+        Task Handle(object command);
     }
 }

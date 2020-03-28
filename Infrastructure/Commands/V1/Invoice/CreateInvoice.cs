@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Infrastructure.Commands.V1.Invoice
 {
-    class CreateInvoice
+    public class CreateInvoice
     {
 
         public int InvoiceNumber { get; set; }
